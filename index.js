@@ -1,13 +1,13 @@
 const validChars = /[^\[\]()+!]/;
 const fs = require('fs');
-const { argv, exit } = require('process');
+const { argv } = require('process');
 
 const zero = '+![]';
 const one = '+!![]';
 
 if (argv[argv.length - 1] == '-h') {
     console.log('Set last argument to "false" to disable shouldEval-wrapping of final string');
-    exit;
+    return;
 }
 
 var shouldEval = !(argv[argv.length - 1] == 'false');
