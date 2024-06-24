@@ -1,4 +1,4 @@
-// const validChars = /[\[\]()+!]/;
+const validChars = /[^\[\]()+!]/;
 const fs = require('fs');
 const { argv, exit } = require('process');
 
@@ -155,6 +155,11 @@ if (shouldEval != true) {
 }else {
     fs.writeFileSync('./out.js', getEval(transpiled) + '()');
     // console.log(getEval(transpiled) + '()')
+}
+
+let badchar = transpiled.match(validChars)
+if (badchar != null) {
+    throw "A non-jsmin character snuck through! The file has still been written for debugging purposes, please report this to the github repo with the input and output file (" + badchar + ")"
 }
 
 console.log('Finished!');
