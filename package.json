@@ -1,0 +1,14 @@
+{
+  "name": "jsfucker",
+  "version": "1.0.0",
+  "description": "Converts javascript into jsfuck",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TheKillerBunny",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}
